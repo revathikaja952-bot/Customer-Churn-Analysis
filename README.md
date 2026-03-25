@@ -1,17 +1,17 @@
 Customer Churn Analysis
 SQL Server | Power BI | DAX
+This project analyzes telecom customer churn behavior to identify high-risk segments, quantify revenue impact, and provide actionable business recommendations.
+
+The goal is to move beyond basic reporting and enable *data-driven decision-making for customer retention*.
 
 ##  Business Problem
-Telecom companies face major revenue
-loss due to customer churn every month.
-The business needed answers to:
-   How many customers are churning?
-   Who is most likely to churn?
-   What is the revenue impact?
-   Which segments need attention?
-   How can churn be reduced?
-This project answers all these
-questions using data driven analysis.
+Telecom companies face significant revenue loss due to customer churn. However, most analysis is reactive — identifying churn after it happens.
+
+This project focuses on:
+- Identifying customers likely to churn
+- Understanding key drivers of churn
+- Quantifying revenue impact
+- Enabling proactive retention strategies
 
 ---
 
@@ -221,6 +221,24 @@ DIVIDE(
 - Skills demonstrated
 
 ---
+## Dashboard Highlights
+
+- KPI tracking for churn rate and revenue loss
+- Risk-based customer segmentation
+- Interactive filtering for deep analysis
+- Conditional formatting to highlight critical segments
+
+---
+##  Risk Segmentation Approach
+
+Customers were segmented into risk categories based on behavioral attributes such as:
+- Contract type
+- Payment method
+- Tenure
+
+This approach ensures segmentation is *predictive in nature* rather than dependent on past churn, making it useful for real-world decision-making.
+
+-----
 
 ## 🔍 Key Insights Found
 
@@ -257,28 +275,36 @@ Non-seniors = lower churn
 
 ---
 
-## 💡 Business Recommendations
+## 📊 Risk Segmentation Validation
 
-1️.TARGET HIGH RISK SEGMENT
-Month-to-month + Electronic check
-customers should be offered
-special retention discounts
+| Risk Segment | Churn Rate |
+|--------------|------------|
+| High Risk | 53.7% |
+| Medium Risk | 40.5% |
+| Low Risk | 21.4% |
+| Safe | 6.7% |
 
-2️.IMPROVE PAYMENT EXPERIENCE
-Incentivize automatic payments
-to reduce electronic check churn
+The segmentation is validated by clear differences in churn rates across segments, confirming its effectiveness in identifying at-risk customers
 
-3️.FIBER OPTIC SERVICE QUALITY
-Invest in improving service
-to reduce ₹114K monthly loss
+----
 
-4️. NEW CUSTOMER ONBOARDING
-Create special program for
-0-12 month customers
+##  Business Recommendations
 
-5️. SENIOR CITIZEN PLANS
-Design affordable plans for
-senior citizens
+1. *Target High-Risk Customers*
+   - Focus on customers with month-to-month contracts and electronic payment methods
+
+2. *Encourage Long-Term Contracts*
+   - Provide incentives for annual or long-term plans to improve retention
+
+3. *Improve Payment Experience*
+   - Promote automatic payment methods to reduce friction
+
+4. *Strengthen Early Customer Engagement*
+   - Introduce onboarding programs for new customers (0–12 months)
+
+5. *Enhance High-Revenue Services*
+   - Improve service quality in fiber optic segment to reduce revenue loss
+
 
 ---
 
