@@ -14,6 +14,9 @@ CREATE VIEW [dbo].[churn_analysis_view] AS
 SELECT 
 CustomerID,
 Gender,
+SeniorCitizen,
+Partner,
+Dependents,
     CASE 
         WHEN SeniorCitizen = 1 THEN 'Senior' 
         ELSE 'Non-Senior' 
@@ -62,18 +65,17 @@ end as TenureGroup,
 ---Risk Segment
 
 CASE
-        WHEN Churn = 'Yes' 
-             AND Contract = 'Month-to-month'  
+         WHEN  Contract = 'Month-to-month'  
              AND PaymentMethod = 'Electronic check'
         THEN 'High Risk'
-        WHEN Churn = 'Yes' 
-             AND Contract = 'One year'
+        WHEN  Contract = 'Month-to-month'
+		 AND Tenure<=12
         THEN 'Medium Risk'
-        WHEN Churn = 'Yes' 
-             AND Contract = 'Two year'
-        THEN 'Low Risk'
-        ELSE 'Safe'
-    END AS Risk_Segment,
+        WHEN Contract IN('One Year','Two year')
+		AND Tenure>12
+		THEN 'Low Risk'
+       ELSE 'Safe'
+      END AS Risk_Segment,
 
     -- ✅ Contract Risk Level (Data Proven)
     -- Month-to-month = 42.71%
